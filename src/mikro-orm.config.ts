@@ -1,6 +1,7 @@
 import { MikroORM } from "@mikro-orm/core";
 import { __prod__ } from "./constants";
 import { Post } from "./entities/Post";
+import { User } from "./entities/User";
 import path from 'path'
 
 // require('dotenv').config()
@@ -15,7 +16,7 @@ export default {
         pattern: /^[\w-]+\d+\.[tj]s$/, // regex pattern for the migration files
         
     },
-    entities: [Post], 
+    entities: [Post, User], 
     dbName: 'reddit-fullstack',
     type: 'postgresql',
     // this was might quick fix, not very elegant
